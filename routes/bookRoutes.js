@@ -1,9 +1,11 @@
-import * as bookController from '../controllers/bookController.js';
+import express from "express";
 
-import express from 'express';
+const router = express.Router();
 
-const bookRoute = express.Router();
+router.get("/", (req, res) => {
+    res.json({
+        message: "Books API is working!"
+    });
+});
 
-bookRoute.get('/', bookController.fetchAllBooks);
-
-export default bookRoute;
+export default router;
